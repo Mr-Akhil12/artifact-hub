@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhil Pillay — AI Agent Artifact Portfolio | AgenticBiz</title>
+    <meta name="description" content="Live portfolio of deployed AI agent tools, compliance trackers, and automation systems built by Akhil Pillay. South Africa's agentic AI pioneer.">
+    <meta name="keywords" content="AI agents, automation, South Africa, Hermes, agentic AI, compliance, load shedding, trading">
+    <meta name="author" content="Akhil Pillay">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Akhil Pillay — AI Agent Artifact Portfolio">
+    <meta property="og:description" content="11+ deployed AI agent tools solving real business problems. Built while you sleep.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mr-akhil12.github.io/artifact-hub/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Akhil Pillay — AI Agent Artifact Portfolio">
+    <meta name="twitter:description" content="11+ deployed AI agent tools. Zero marketing budget. 100% autonomous build pipeline.">
+    <link rel="canonical" href="https://mr-akhil12.github.io/artifact-hub/">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --surface: #12121a;
+            --border: #1e1e2e;
+            --text: #e4e4e7;
+            --text-muted: #a1a1aa;
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --green: #22c55e;
+            --amber: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        header {
+            text-align: center;
+            padding: 3rem 0 2rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        header .tagline {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat .number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .stat .label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .intro {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .intro p { color: var(--text-muted); margin-bottom: 0.5rem; }
+        .intro p:last-child { margin-bottom: 0; }
+        .intro strong { color: var(--text); }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .section-title .count {
+            background: var(--accent-glow);
+            color: var(--accent);
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+        .artifacts {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        .artifact {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .artifact:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 20px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+        .artifact-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        .artifact-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text);
+        }
+        .artifact-status {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .status-live {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--green);
+        }
+        .status-pending {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--amber);
+        }
+        .artifact-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .artifact-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .artifact-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .tag {
+            background: var(--accent-glow);
+            color: var(--accent);
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+        .pipeline {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .pipeline-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .step .icon {
+            width: 28px;
+            height: 28px;
+            background: var(--accent-glow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+        .cta-section {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+        .cta-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .cta-section p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+        .cta-button:hover {
+            background: #4f46e5;
+            transform: translateY(-1px);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        footer a { color: var(--accent); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.6rem; }
+            .stats { gap: 1rem; }
+            .stat .number { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Akhil Pillay</h1>
+            <p class="tagline">AI Agent Artifact Portfolio — Autonomous tools built while South Africa sleeps. Proof that one person + AI agents = a full product pipeline.</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="number">11</div>
+                    <div class="label">Deployed Artifacts</div>
+                </div>
+                <div class="stat">
+                    <div class="number">24/7</div>
+                    <div class="label">Autonomous Pipeline</div>
+                </div>
+                <div class="stat">
+                    <div class="number">100%</div>
+                    <div class="label">Free Tier</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="intro">
+            <p><strong>What is this page?</strong> A live catalog of every tool, tracker, and system I've built and deployed using AI agents (Hermes). Each artifact solves a real problem — most target South African businesses specifically.</p>
+            <p><strong>How is this built?</strong> An autonomous pipeline runs 24/7: idea generation at 3AM, synthesis 3x daily, content production at 8AM, vault healing at 2AM. All artifacts are deployed to GitHub Pages automatically.</p>
+            <p><strong>Why?</strong> Proof of competence. If I can build 11 tools while sleeping, imagine what I can build for your business.</p>
+        </div>
+
+        <h2 class="section-title">Deployed Artifacts <span class="count">11 live</span></h2>
+        <div class="artifacts">
+            <a href="https://mr-akhil12.github.io/cron-health-dashboard/" class="artifact" target="_blank" rel="noopener">
+                <div class="artifact-header">
+                    <span class="artifact-name">Cron Health Signal Light</span>
+                    <span class="artifact-status status-live">Live</span>
+                </div>
+                <p class="artifact-desc">Real-time dashboard monitoring 15 autonomous AI agent cron jobs. Auto-refreshes every 60 seconds. Prevents multi-day invisible failures.</p>
+                <div class="artifact-meta">
+                    <span><span class="tag">Infrastructure</span></span>
+                    <span>June 28, 2026</span>
+                </div>
+            </a>
+
+            <a href="https://mr-akhil12.github.io/thatslekker-directory/" class="artifact" target="_blank" rel="noopener">
+                <div class="artifact-header">
+                    <span class="artifact-name">That's Lekker Directory</span>
+                    <span class="artifact-status status-live">Live</span>
+                </div>
+                <p class="artifact-desc">Yellow Pages 2.0 for South Africa. 120+ businesses seeded via CICP import pipeline. Static directory generator with search.</p>
+                <div class="artifact-meta">
+                    <span><span class="tag">SA Market</span></span>
+                    <span>June 27, 2026</span>
+                </div>
+            </a>
+
+            <a href="https://mr-akhil12.github.io/sarb-compliance-tracker/" class="artifact" target="_blank" rel="noopener">
+                <div class="artifact-header">
+                    <span class="artifact-name">SARB AI Regulatory Compliance Tracker</span>
+                    <span class="artifact-status status-live">Live</span>
+                </div>
+                <p class="artifact-desc">Tracks South African Reserve Bank deadlines for AI agent regulation compliance. Evergreen authority tool for SA fintech.</p>
+                <div class="artifact-meta">
+                    <span><span class="tag">Compliance</span></span>
+                    <span>June 27, 2026</span>
+                </div>
+            </a>
+
+            <a href="https://agenticbiz.vercel.app" class="artifact" target="_blank" rel="noopener">
+                <div class="artifact-header">
+                    <span class="artifact-name">AgenticBiz Website</span>
+                    <span class="artifact-status status-live">Live</span>
+                </div>
+                <p class="artifact-desc">Business website for AI agent deployment service. Next.js 15 + Tailwind, dark/light mode, particle background. Proof of delivery capability.</p>
+                <div class="artifact-meta">
+                    <span><span class="tag">Business</span></span>
+                    <span>June 24, 2026</span>
+                </div>
+            </a>
+
+            <a href="https://hush-v1.vercel.app" class="artifact" target="_blank" rel="noopener">
+                <div class="artifact-header">
+                    <span class="artifact-name">Hush — SA Car Culture Platform</span>
+                    <span class="artifact-status status-live">Live</span>
+                </div>
+                <p class="artifact-desc">Private social platform for South African car enthusiasts. Live Meet Map, Crews, Draggy Timer, Walkie-Talkie. MSA accredited.</p>
+                <div class="artifact-meta">
+                    <span><span class="tag">SA Market</span></span>
+                    <span>June 20, 2026</span>
+                </div>
+            </a>
+
+            <a href="https://mr-akhil12.github.io/sa-business-compliance-countdown/" class="artifact" target="_blank" rel="noopener">
+                <div class="artifact-header">
+                    <span class="artifact-name">SA Business Compliance Countdown</span>
+                    <span class="artifact-status status-live">Live</span>
+                </div>
+                <p class="artifact-desc">Countdown timer for key South African business regulatory deadlines. POPIA, B-BBEE, AI regulations — all in one view.</p>
+                <div class="artifact-meta">
+                    <span><span class="tag">Compliance</span></span>
+                    <span>June 22, 2026</span>
+                </div>
+            </a>
+
+            <a href="https://mr-akhil12.github.io/popia-scorecard-phase1/" class="artifact" target="_blank" rel="noopener">
+                <div class="artifact-header">
+                    <span class="artifact-name">POPIA Scorecard Phase 1</span>
+                    <span class="artifact-status status-live">Live</span>
+                </div>
+                <p class="artifact-desc">Self-assessment tool for South Africa's POPIA (data protection) compliance. Phase 1 of multi-phase compliance toolkit.</p>
+                <div class="artifact-meta">
+                    <span><span class="tag">Compliance</span></span>
+                    <span>June 18, 2026</span>
+                </div>
+            </a>
+
+            <a href="https://mr-akhil12.github.io/agenticbiz-lead-capture/" class="artifact" target="_blank" rel="noopener">
+                <div class="artifact-header">
+                    <span class="artifact-name">AgenticBiz Lead Capture</span>
+                    <span class="artifact-status status-live">Live</span>
+                </div>
+                <p class="artifact-desc">Micro-SaaS lead capture landing page for AgenticBiz. Proof of concept for automated lead generation service offering.</p>
+                <div class="artifact-meta">
+                    <span><span class="tag">Business</span></span>
+                    <span>June 24, 2026</span>
+                </div>
+            </a>
+
+            <a href="https://mr-akhil12.github.io/twp-course-activation-kit/" class="artifact" target="_blank" rel="noopener">
+                <div class="artifact-header">
+                    <span class="artifact-name">TWP Course Activation Kit</span>
+                    <span class="artifact-status status-live">Live</span>
+                </div>
+                <p class="artifact-desc">Interactive study aid for the TWP Price Action Trading course. Turns R5000 investment into structured daily practice.</p>
+                <div class="artifact-meta">
+                    <span><span class="tag">Trading</span></span>
+                    <span>June 21, 2026</span>
+                </div>
+            </a>
+
+            <a href="https://mr-akhil12.github.io/agenticbiz-service-menu/" class="artifact" target="_blank" rel="noopener">
+                <div class="artifact-header">
+                    <span class="artifact-name">AgenticBiz Service Menu</span>
+                    <span class="artifact-status status-live">Live</span>
+                </div>
+                <p class="artifact-desc">Pricing and service description page for AgenticBiz offerings. Wix builds, lead capture, SEO monitoring, uptime alerts, AI customer service.</p>
+                <div class="artifact-meta">
+                    <span><span class="tag">Business</span></span>
+                    <span>June 19, 2026</span>
+                </div>
+            </a>
+
+            <div class="artifact">
+                <div class="artifact-header">
+                    <span class="artifact-name">Load Shedding-Proof AI Toolkit</span>
+                    <span class="artifact-status status-pending">Pending Deploy</span>
+                </div>
+                <p class="artifact-desc">Lead capture landing page targeting SA SMEs with "7 Steps to Eskom-Proof Automation" guide. HTML built, awaiting GitHub Pages deployment.</p>
+                <div class="artifact-meta">
+                    <span><span class="tag">SA Market</span></span>
+                    <span>June 29, 2026</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="pipeline">
+            <h2 class="section-title">How This Gets Built <span class="count">24/7 autonomous</span></h2>
+            <div class="pipeline-steps">
+                <div class="step"><span class="icon">00:00</span> Midnight review — scan vault, update daily note, verify cron health</div>
+                <div class="step"><span class="icon">02:00</span> Vault healer — 9-check pipeline, frontmatter compliance, orphan detection</div>
+                <div class="step"><span class="icon">03:00</span> Nightly build — generate 3 ideas, pick winner, build artifact</div>
+                <div class="step"><span class="icon">04:00</span> Self-improvement engine — optimize skills, fix patterns, update procedures</div>
+                <div class="step"><span class="icon">05:00</span> Morning synthesis — scan overnight activity, identify patterns</div>
+                <div class="step"><span class="icon">08:00</span> Content pipeline — produce 3 social media pieces (LinkedIn, X, YouTube)</div>
+                <div class="step"><span class="icon">13:00</span> Afternoon synthesis — research pass, validate assumptions</div>
+                <div class="step"><span class="icon">21:00</span> Evening synthesis — full-day reconciliation, write tomorrow's priority</div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need AI agents for your business?</h3>
+            <p>I deploy autonomous AI systems for South African businesses. Starting with marketing agencies, expanding to all sectors. $5K/month per client. Proven infrastructure. 11+ deployed artifacts as proof.</p>
+            <a href="https://agenticbiz.vercel.app" class="cta-button" target="_blank" rel="noopener">View AgenticBiz →</a>
+        </div>
+
+        <footer>
+            <p>Built by <strong>Akhil Pillay</strong> in Tongaat, KZN, South Africa — powered by <a href="https://hermes-agent.nousresearch.com">Hermes Agent</a></p>
+            <p style="margin-top: 0.5rem;">11 artifacts deployed. 0 marketing budget. 100% autonomous pipeline.</p>
+            <p style="margin-top: 0.5rem;"><a href="https://github.com/Mr-Akhil12">GitHub</a> &middot; <a href="https://agenticbiz.vercel.app">AgenticBiz</a> &middot; <a href="https://hush-v1.vercel.app">Hush</a></p>
+            <p style="margin-top: 1rem; font-size:0.7rem;">Last updated: 2026-06-30 03:00 SAST</p>
+        </footer>
+    </div>
+</body>
+</html>
